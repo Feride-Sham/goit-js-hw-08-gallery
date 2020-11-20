@@ -56,7 +56,7 @@ function setLargeImgRef(source) {
 }
 
 //функция открытия модалки
-function openModal(ev) {
+function openModal() {
   lightBox.classList.add('is-open');
   window.addEventListener('keydown', onEscDown);
   window.addEventListener('keydown', onRightDown);
@@ -73,7 +73,7 @@ function btnCloseClick(ev) {
 
 // функция закрытия модального окна
 // +очистка src
-function closeModal(ev) {
+function closeModal() {
   lightBox.classList.remove('is-open');
 
   // удаление слушателей на ESC, влево, вправо(доп задание):
@@ -111,7 +111,7 @@ function onRightDown(ev) {
     if (currentImgIndex === imgArray.length) {
       currentImgIndex = 0;
     }
-    imgLightbx.src = '';
+
     imgLightbx.src = imgArray[currentImgIndex].original;
   }
 }
@@ -123,7 +123,7 @@ function onLeftDown(ev) {
     if (currentImgIndex === -1) {
       currentImgIndex = imgArray.length - 1;
     }
-    imgLightbx.src = '';
+
     imgLightbx.src = imgArray[currentImgIndex].original;
   }
 }
